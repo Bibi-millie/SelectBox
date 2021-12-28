@@ -26,7 +26,8 @@ window.addEventListener('load', () => {
     }
   })
 
-  console.time()
+  // 타이머를 시작할 부분
+  console.time('selectbox')
 
   // selectbox 항목
   for (let j = 0; j < data.length; j++) {
@@ -45,14 +46,14 @@ function processChanges(deadline) {
   while (deadline.timeRemaining() > 0 && !changeQueue.isEmpty()) {
     var c = changeQueue.dequeue()
 
-    if (c)
-    requestAnimationFrame(c.execute)
+    if (c) 
+      requestAnimationFrame(c.execute)
   }
 
   if (!changeQueue.isEmpty())
     requestIdleCallback(processChanges)
   else
-    console.timeEnd()
+    console.timeEnd('selectbox')
 }
 
 function createItem(d) {
