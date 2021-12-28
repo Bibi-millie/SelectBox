@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Box</title>
+  <style>
+    #popup {
+      position: absolute;
+      width: 300px;
+      height: 200px;
+      display: none;
+    }
+
+    #popup.on {
+      display: block;
+    }
+
+    .item {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <span id="counter" style="font-size: 24px;">0</span>
+  <div class="selectbox">
+    <span id="title">이건 셀렉트박스</span>
+    <div id="popup">
+      <ul id="list"></ul>
+    </div>
+  </div>
+
+  <script src="./changeQueue.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
