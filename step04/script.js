@@ -62,6 +62,7 @@ function createItem(d) {
   elem.classList.add('item')
 
   elem.addEventListener('click', () => {
+    
     $title.innerHTML = d
     $popup.classList.remove('on')
   })

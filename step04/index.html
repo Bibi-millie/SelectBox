@@ -4,29 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Select Box</title>
-  <style>
-    #popup {
-      position: absolute;
-      width: 300px;
-      height: 200px;
-      display: none;
-    }
-
-    #popup.on {
-      display: block;
-    }
-
-    .item {
-      list-style: none;
-    }
-  </style>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <span id="counter" style="font-size: 24px;">0</span>
+  <h2 id="counter" class="counter">0</h2>
+
   <div class="selectbox">
-    <span id="title">이건 셀렉트박스</span>
-    <div id="popup">
-      <ul id="list"></ul>
+    <button id="title" class="title">Selectbox</button>
+    <div id="popup" class="popup">
+      <ul id="list" class="list"></ul>
     </div>
   </div>
 
