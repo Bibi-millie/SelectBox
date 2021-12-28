@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --bg-color: #222429;
+  --primary-bg-color: #333740;
+  --primary-color: #2c62f6;
+  --text-color: #b1b8ca;
+  --text-active: #ffffff;
+  --button-hover-bg-color: #2b2e34;
+  --border-color: #494d59;
+  --border-radius: 1.4rem;
+  --item-height: 4.6rem;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.counter {
+  font-size: 5em;
+}
+
+.selectbox {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 34rem;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.8rem;
+  height: 5.2rem;
+  border-radius: var(--border-radius);
+  color: var(--text-active);
+  background-color: var(--primary-bg-color);
+  border: 0.1rem solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.title:focus {
+  border: 0.1rem solid var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(44, 98, 246, 0.4);
+}
+
+.popup {
+  display: none;
+}
+
+.popup.on {
+  display: block;
+}
+
+.list {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  border: 0.1rem solid var(--border-color);
+  position: relative;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  height: var(--item-height);
+  transition: background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: var(--text-color);
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #000;
+}

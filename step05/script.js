@@ -39,16 +39,22 @@ window.addEventListener('load', () => {
     })
   }
 
-  // 반복적으로 큐를 체크하여 30개씩 실행
-  setInterval(function() {
-    for (var i = 0; i < 30 && !changeQueue.isEmpty(); i++) {
-      var c = changeQueue.dequeue()
-
-      if (c) c.execute()
-      if (changeQueue.isEmpty()) console.timeEnd('selectbox')
-    }
-  }, 0)
+  requestIdleCallback(processChanges)
 })
+
+function processChanges(deadline) {
+  while (deadline.timeRemaining() > 0 && !changeQueue.isEmpty()) {
+    var c = changeQueue.dequeue()
+
+    if (c) 
+      c.execute()
+  }
+
+  if (!changeQueue.isEmpty())
+    requestIdleCallback(processChanges)
+  else
+    console.timeEnd('selectbox')
+}
 
 function createItem(d) {
   let elem = document.createElement('li')
